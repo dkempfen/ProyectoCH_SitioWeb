@@ -373,7 +373,7 @@ footer .margen-superior-inferior {
 
 @media (min-width: 769px) {
   .gif-animation-mobile {
-    display: none !important; /* Asegura que la regla se aplique incluso si hay otras reglas más específicas */
+    display: none !important;
   }
 }
 @media (max-width: 768px) {
@@ -401,8 +401,8 @@ footer .margen-superior-inferior {
     text-align: center; /* Centra el contenido horizontalmente */
   }
   .gif-animation-mobile {
-    display: inline-block; /* Asegura que la imagen se comporte como un elemento de bloque */
-    margin-top: -200px; /* Ajusta el margen superior según sea necesario */
+    display: inline-block;
+    margin-top: -200px; /* Ajusta el margen superior  */
   }
 }
 
