@@ -1,214 +1,28 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="El mejor bar para eventos en Jardín Lomas. Disfruta de nuestras promociones y reserva tu mesa para eventos en Rincón Bohemio.">
+    <link rel="stylesheet" href="/TpProyectoSitioWeb_CH/style/style.css">
+    <link rel="icon" href="/TpProyectoSitioWeb_CH/imagenes/iconoPagina.png" type="image/png">
     <title>Rincón Bohemio</title>
-    <link rel="icon" href="./imagenes/iconoPagina.png" type="image/png">
-
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css">
-    <link rel="stylesheet" href="./style/style.css">
-    <link rel="stylesheet" href="https://unpkg.com/swiper/swiper-bundle.min.css">
 
 </head>
-
-<body>
-    <header>
-        <nav class="navbar navbar-expand-lg navbar-dark">
-            <div class="container">
-                <div class="d-flex justify-content-between  w-100">
-
-                    <!-- Título  -->
-                    <div class="text-center w-100 mb-3">
-                        <img class="gif-animation" src="./imagenes/gif-cerveza-logo-unscreen.gif" alt="GIF animado">  
-                            
-
-                        <h1 class="title-bar">
-                            Rincón Bohemio
-                          
-                        </h1>     
-                               
-                    </div>
-                    <!-- Botón hamburguesa -->
-                    <button class="navbar-toggler  d-xl-none d-lg-none d-md-none" type="button"
-                        data-bs-toggle="collapse" data-bs-target="#navbarListadoMenu" aria-controls="navbarListadoMenu"
-                        aria-expanded="false" aria-label="Toggle navigation">
-                        <span class="navbar-toggler-icon"></span>
-                    </button>
-                </div>
-
-                 <!-- Personaje animado -->
-                 <div class="personaje"></div>
-
-            </div>
-        </nav>
-        <!-- Menú de navegación (se suprime en pantallas pequeñas) -->
-        <div class="collapse navbar-lista-menu d-xl-none d-lg-none d-md-none" id="navbarListadoMenu">
-            <ul class="navbar-nav mx-auto">
-                <li class="nav-item">
-                    <a class="nav-link" href="index.html">Inicio</a>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link" href="./pages/comidas.html">Comidas</a>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link" href="./pages/bebidas.html">Bebidas</a>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link" href="./pages/cafe.html">Café</a>
-                </li>
-            </ul>
+<body class="body-bienvenida">
+    <div class="bienvenida">
+        <h1 class="titulo-bienvenida">Rincón Bohemio</h1>
+        <div class="loading-dots">
+            <span class="loading-dot"></span>
+            <span class="loading-dot"></span>
+            <span class="loading-dot"></span>
         </div>
-
-
-    </header>
-
-
-
-    <nav class="navbar navbar-expand-md navbar-custom nav_menu">
-        <div class="container">
-            <div class="collapse navbar-collapse text-center d-md-block" id="">
-                <ul class="navbar-nav mx-auto">
-                    <li class="active">
-                        <a class="nav-link" href="index.html">Inicio</a>
-                    </li>
-                    <li class="">
-                        <a class="nav-link" href="./pages/comidas.html">Comidas</a>
-                    </li>
-                    <li class="">
-                        <a class="nav-link" href="./pages/bebidas.html">Bebidas</a>
-                    </li>
-                    <li class="">
-                        <a class="nav-link" href="./pages/cafe.html">Café</a>
-                    </li>
-                </ul>
-            </div>
-        </div>
-    </nav>
-
-    <main>
-        <section>
-            <h2>Bienvenido al Rincón Bohemio</h2>
-            <p>Descubre nuestras promociones, reserva tu mesa y disfruta de emocionantes eventos en nuestro acogedor
-                bar.</p>
-            <div class="servicios">
-                <div class="servicios-box">
-                    <a href="./pages/promociones.html">
-                        <h3 class="servicios-titulo">Promociones</h3>
-
-                        <img src="./imagenes/promocionesComida.jpg" alt="Promociones de Comida">
-                    </a>
-                </div>
-                <div class="servicios-box">
-                    <h3 class="servicios-titulo">Reserva</h3>
-                    <img src="./imagenes/reservarmesa.jpg" alt="Reservar Mesa">
-                </div>
-                <div class="servicios-box">
-                    <h3 class="servicios-titulo">Eventos</h3>
-                    <img src="./imagenes/eventosBar.jpg"  alt="Eventos en el bar de Jardín Lomas">
-                </div>
-            </div>
-        <section>
-
-
-        <section id="testimonios">
-            <div class="container">
-                <h2 class="title__primary">Testimonios</h2>
-                <div class="swiper mySwiper">
-                    <div class="swiper-wrapper">
-                        <div class="swiper-slide">
-                            <p class="desc">
-                                La comida es deliciosa y el ambiente del bar es muy acogedor. Definitivamente volveré por más.
-                            </p>
-                            <div class="person">
-                                <span class="author">Juan Pérez</span>
-                                <span class="position">Cliente</span>
-                            </div>
-                        </div>
-                        <div class="swiper-slide">
-                            <p class="desc">
-                                El servicio es excelente y el lugar está muy bien decorado. Recomiendo este lugar a todos mis amigos.
-                            </p>
-                            <div class="person">
-                                <span class="author">María López</span>
-                                <span class="position">Cliente habitual</span>
-                            </div>
-                        </div>
-                        <div class="swiper-slide">
-                            <p class="desc">
-                                Fui con mi familia y nos encantó la experiencia. La comida estaba deliciosa y el personal muy amable.
-                            </p>
-                            <div class="person">
-                                <span class="author">Ana González</span>
-                                <span class="position">Cliente</span>
-                            </div>
-                        </div>
-                     
-                    </div>
-                    <div class="separacion-paginacion"></div>
-                  
-                    <div class="swiper-pagination"></div> <!-- Agrega la clase separacion-paginacion -->
-                </div>
-             
-            </div>
-        
-        </section>
-       
-    </main>
-
-    <div class="mobile-cerveza-logo">
-        <img class="gif-animation-mobile" src="./imagenes/gif-cerveza-logo-unscreen.gif" alt="GIF animado">
     </div>
 
-    <footer>
-
-
-        <div class="redes-sociales">
-
-            <a href="https://www.instagram.com/tu_usuario_instagram" target="_blank" rel="noopener noreferrer">
-                <i class="bi bi-instagram"></i>
-            </a>
-
-            <a href="https://www.facebook.com/tu_usuario_facebook" target="_blank" rel="noopener noreferrer">
-                <i class="bi bi-facebook"></i>
-            </a>
-
-
-        </div>
-
-
-        <div class="ubicacion">
-            <p>Ubicación: Ciudad Jardin Lomas de Palomar, 3 de febrero</p>
-        </div>
-
-        <div class="copy-derecho">
-            <p>&copy; 2024 Rincón Bohemio. Todos los derechos reservados.</p>
-        </div>
-
-        <a href="https://api.whatsapp.com/send?phone=541160463213&text=Bienvenido%20a%20Rinc%C3%B3n%20Bohemio.%20Ingrese%20su%20consulta:%0A1.%20Reservar%20un%20lugar%0A2.%20Consultar%20sobre%20promociones%0A3.%20Consultar%20por%20eventos%0A4.%20Otro"
-            target="_blank" class="whatsapp-float" rel="noopener noreferrer">
-            <i class="bi bi-whatsapp"></i>
-        </a>
-    </footer>
-
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"></script>
-    <script src="https://unpkg.com/swiper/swiper-bundle.min.js"></script>
+    <!-- Script para redirigir automáticamente después de 3 segundos -->
     <script>
-        
-        var swiper = new Swiper('.mySwiper', {
-            loop: true,
-            autoplay: {
-                delay: 5000, // Intervalo de tiempo en milisegundos entre cada slide
-                disableOnInteraction: false, // Evita que la reproducción automática se detenga cuando el usuario interactúa con el slider
-            },
-            pagination: {
-                el: '.swiper-pagination',
-                clickable: true,
-            },
-        });
+        setTimeout(function() {
+            window.location.href = "../TpProyectoSitioWeb_CH/pages/home.html"; // redirige a la pantalla home 
+        }, 3000); //  tiempo de espera antes de la redirección
     </script>
 
 </body>
