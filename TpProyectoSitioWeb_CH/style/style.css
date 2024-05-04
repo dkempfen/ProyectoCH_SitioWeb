@@ -1,6 +1,5 @@
 @charset "UTF-8";
 @import url("https://fonts.googleapis.com/css2?family=Roboto:wght@700&display=swap");
-
 .body-bienvenida {
   margin: 0;
   padding: 0;
@@ -71,13 +70,10 @@ body {
   /* Estilo opcional para la primera sección */
 }
 body header {
-  background-color: #ffdb58;
-  padding: 20px;
+  height: 80vh; /* Establece la altura del encabezado al 100% de la altura de la ventana */
+  overflow: hidden; /* Evita que el carrusel genere barras de desplazamiento */
   text-align: center;
   font-size: 24px;
-}
-body header .mobile-cerveza-logo {
-  display: none;
 }
 body .navbar-toggler {
   background-color: black;
@@ -127,6 +123,22 @@ body .nav_menu nav a:hover {
   background-color: #ffdb58;
   color: #1a1a1a;
 }
+body .carousel-inner {
+  width: 100%;
+  height: 100%;
+}
+body .carousel-item {
+  justify-content: center; /* Centra horizontalmente la imagen */
+  align-items: center; /* Centra verticalmente la imagen */
+  height: 100vh; /* Establece la altura del carrusel al 100% de la altura de la ventana */
+}
+body .carousel-item img {
+  object-fit: cover;
+  max-width: 100%;
+  max-height: 100%;
+  object-fit: cover; /* La imagen se estira para cubrir todo el contenedor */
+  transition: opacity 0.5s ease; /* Suaviza la transición */
+}
 body .gif-animation {
   filter: grayscale(50%);
   position: absolute;
@@ -163,12 +175,24 @@ body h1 {
   color: black;
 }
 body .title-bar {
+  margin: 0 auto;
   text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
   transition: opacity 0.3s;
   font-family: "Roboto", sans-serif;
+  color: white; /* Color del texto */
+  font-size: 3rem; /* Tamaño de la fuente */
+  z-index: 1; /* Para asegurar que esté encima del carrusel */
 }
 body .title-bar:hover {
   opacity: 0.5;
+}
+body .overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.5); /* Color de superposición semitransparente */
 }
 body h2 {
   color: #ffdb58;
@@ -273,6 +297,70 @@ body .cerveza-list .coffee-item p,
 body .cerveza-list .cerveza-item p {
   color: #ccc;
 }
+body .card {
+  height: 400px; /* Altura fija deseada para las tarjetas */
+  background-color: black; /* Color de fondo grisáceo */
+}
+body .card-img-top {
+  height: 300px; /* Establece una altura fija para todas las imágenes */
+  object-fit: cover; /* Ajusta la imagen para que cubra la altura especificada */
+}
+body .month-day-column {
+  background-color: #333;
+  color: #fff;
+}
+body .month-column {
+  background-color: #ff5f5f;
+  color: #fff;
+}
+body .day-column {
+  background-color: #70a1ff;
+  color: #fff;
+}
+body .container-proeventos {
+  margin: 0 auto;
+  max-width: 100%; /* Ancho máximo de la tabla igual al ancho del contenedor */
+  overflow-x: auto; /* Hace que la tabla sea desplazable horizontalmente si es necesario */
+}
+body .container-proeventos table {
+  margin-right: 10px; /* Agrega un margen derecho de 10px a la tabla */
+}
+body table.container-proeventos {
+  border-collapse: separate; /* Cambia a border-collapse: separate; */
+}
+body .month-day-column {
+  position: relative;
+  width: 100px; /* Ajusta el ancho según tus necesidades */
+  height: 50px; /* Ajusta la altura según tus necesidades */
+}
+body .month-day-column::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  background: linear-gradient(to bottom Left, black 49.5%, black 50.5%, transparent 50.5%);
+}
+body .half-column-left {
+  position: absolute;
+  width: 50%;
+  height: 100%;
+}
+body .half-column-right {
+  position: absolute;
+  width: 50%;
+  height: 100%;
+  top: 5px;
+}
+body .half-column:nth-child(1) {
+  left: 0;
+  text-align: left;
+}
+body .half-column-right:nth-child(2) {
+  right: 10px;
+  text-align: right;
+}
 
 .body-promociones {
   font-family: "Arial", sans-serif;
@@ -282,11 +370,61 @@ body .cerveza-list .cerveza-item p {
   color: white;
 }
 .body-promociones .header-promociones {
-  background-color: #991111;
-  padding: 20px;
+  height: 80vh; /* Establece la altura del encabezado al 100% de la altura de la ventana */
+  overflow: hidden; /* Evita que el carrusel genere barras de desplazamiento */
   text-align: center;
   color: white;
   font-size: 24px;
+}
+.body-promociones .carousel-item {
+  position: relative;
+}
+.body-promociones .background-image {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-image: url("/TpProyectoSitioWeb_CH/imagenes/HappyHour-Promocions-Personas.jpg"); /* Cambia la URL por la de tu imagen */
+  background-size: cover;
+  background-position: center;
+  filter: blur(10px); /* Aplica un filtro de desenfoque */
+  z-index: -1;
+}
+.body-promociones .background-image-HappyHour-carrusel {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-image: url("/TpProyectoSitioWeb_CH/imagenes/HappyHour-carrusel.jpeg"); /* Cambia la URL por la de tu imagen */
+  background-size: cover;
+  background-position: center;
+  filter: blur(10px); /* Aplica un filtro de desenfoque */
+  z-index: -1;
+}
+.body-promociones .background-image-HappyHour-letra {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-image: url("/TpProyectoSitioWeb_CH/imagenes/HappyHour-letras.jpeg"); /* Cambia la URL por la de tu imagen */
+  background-size: cover;
+  background-position: center;
+  filter: blur(10px); /* Aplica un filtro de desenfoque */
+  z-index: -1;
+}
+.body-promociones .carousel-item img {
+  object-fit: cover;
+  max-width: 75%;
+  max-height: 100%;
+  display: block;
+  margin: 0 auto;
+  transition: opacity 0.5s ease;
+}
+.body-promociones .navbar-promociones {
+  background-color: #991111;
 }
 .body-promociones #nav-promociones {
   background-color: #550000;
@@ -433,30 +571,116 @@ footer .margen-superior-inferior {
   margin-bottom: 20px;
 }
 
-@media (min-width: 769px) {
+.item-hamburguesa {
+  text-align: left; /* Alinea el texto a la izquierda */
+}
+
+.boton-hamburguesa {
+  background-image: url("ruta/a/tu/imagen.jpg"); /* Ruta a tu imagen de fondo */
+  background-size: cover; /* Cubre todo el espacio disponible */
+  background-position: center; /* Centra la imagen */
+  border-radius: 15px; /* Bordes redondeados */
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.3); /* Sombra */
+  color: white; /* Color del texto */
+  font-family: "Arial", sans-serif; /* Tipografía */
+  padding: 5px; /* Espaciado interno */
+}
+
+#carouselExampleSlidesOnly {
+  max-width: 100%;
+  margin: 0 auto; /* Centrar el carrusel en la pantalla */
+}
+
+@keyframes slideIn {
+  from {
+    transform: translateX(100%);
+  }
+  to {
+    transform: translateX(0);
+  }
+}
+#navbarListadoMenu {
+  top: 75px; /* Ajusta este valor según sea necesario */
+}
+
+.offcanvas {
+  animation: slideIn 0.3s forwards;
+  background-color: #1a1a1a; /* Cambiar el color de fondo */
+  border-radius: 10px; /* Agregar bordes redondeados */
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.5); /* Agregar sombra */
+}
+
+.offcanvas-body {
+  padding: 20px; /* Agregar espacio interno */
+}
+
+.offcanvas-end {
+  top: 0;
+  right: 0;
+  width: 300px;
+  border-left: 1px solid rgba(0, 0, 0, 0.2);
+  transform: translateX(100%);
+}
+
+/* Estilos para los enlaces del menú */
+.navbar-nav .nav-link {
+  color: #fff; /* Cambiar el color del texto */
+  padding-right: 10px;
+  padding-left: 10px;
+}
+
+.navbar-nav .nav-link:hover {
+  color: #ffd700; /* Cambiar el color del texto al pasar el cursor */
+}
+
+.offcanvas-title {
+  font-size: 1.5rem; /* Tamaño de la fuente del título */
+}
+
+.navbar-nav .nav-link {
+  color: white; /* Color del texto de los enlaces */
+}
+
+.navbar-nav .nav-link:hover {
+  color: #ffd700; /* Cambia el color del texto al pasar el cursor */
+}
+
+.navbar-nav .nav-link i {
+  margin-right: 5px; /* Espacio entre el icono y el texto */
+}
+
+/* Oculta la barra de navegación en dispositivos con un ancho máximo de 768px */
+/* Media queries */
+/* Pantallas pequeñas (320px) */
+@media (max-width: 320px) {
+  .gif-animation,
   .gif-animation-mobile {
-    display: none !important;
+    display: none; /* Oculta el contenido en dispositivos móviles */
+  }
+  .carousel-inner {
+    max-height: 300px; /* Ajusta la altura máxima de las imágenes */
+  }
+  .carousel-item img {
+    max-height: 600px; /* Ajusta la altura máxima de las imágenes */
+    margin-top: -50px; /* Ajusta el margen superior para subir la imagen */
+  }
+  .main-home {
+    margin-top: -200px; /* Ajusta el margen superior para subir la imagen */
+  }
+  .main-promociones {
+    margin-top: -180px; /* Ajusta el margen superior para subir la imagen */
+  }
+  #navbarListadoMenu {
+    top: 120px;
   }
 }
-@media (max-width: 768px) {
-  .servicios .servicios-box {
-    width: 100%;
-  }
-}
-@media screen and (max-width: 600px) {
-  nav {
-    flex-direction: column;
-    align-items: center;
-  }
-  nav a {
-    margin: 5px 0;
-  }
-}
-@media (max-width: 767px) {
+/* Pantallas medianas (321px - 540px) */
+@media (min-width: 321px) and (max-width: 540px) {
   .promociones .promociones-box {
     margin-bottom: 20px;
   }
-  .gif-animation {
+  .gif-animation,
+  .gif-animation-mobile {
     display: none; /* Oculta el contenido en dispositivos móviles */
   }
   .mobile-cerveza-logo {
@@ -464,8 +688,91 @@ footer .margen-superior-inferior {
   }
   .gif-animation-mobile {
     display: inline-block;
-    margin-top: -200px; /* Ajusta el margen superior  */
+    margin-top: -200px; /* Ajusta el margen superior */
   }
+  .carousel-inner {
+    max-height: 300px; /* Ajusta la altura máxima de las imágenes */
+  }
+  .carousel-item img {
+    max-height: 600px; /* Ajusta la altura máxima de las imágenes */
+    margin-top: -50px; /* Ajusta el margen superior para subir la imagen */
+  }
+  main {
+    margin-top: -150px; /* Ajusta el margen superior para subir la imagen */
+  }
+  #navbarListadoMenu {
+    top: 120px;
+  }
+}
+/* Pantallas medianas (432px - 540px) */
+@media (min-width: 432px) and (max-width: 540px) {
+  main {
+    margin-top: -200px; /* Ajusta el margen superior para subir la imagen */
+  }
+  #navbarListadoMenu {
+    top: 70px;
+  }
+  .container-proeventos {
+    width: 100%; /* Cambia el ancho al 100% para que se ajuste al ancho del dispositivo */
+  }
+}
+/* Pantallas medianas-grandes (541px - 767px) */
+@media (min-width: 541px) and (max-width: 767px) {
+  .promociones .promociones-box {
+    margin-bottom: 20px;
+  }
+  .gif-animation,
+  .gif-animation-mobile {
+    display: none; /* Oculta el contenido en dispositivos móviles */
+  }
+  .mobile-cerveza-logo {
+    text-align: center; /* Centra el contenido horizontalmente */
+  }
+  .gif-animation-mobile {
+    display: inline-block;
+    margin-top: -200px; /* Ajusta el margen superior */
+  }
+  .carousel-inner {
+    max-height: 400px; /* Ajusta la altura máxima de las imágenes */
+  }
+  .carousel-item img {
+    max-height: 600px; /* Ajusta la altura máxima de las imágenes */
+    margin-top: -50px; /* Ajusta el margen superior para subir la imagen */
+  }
+  main {
+    margin-top: -100px; /* Ajusta el margen superior para subir la imagen */
+  }
+  #navbarListadoMenu {
+    top: 70px;
+  }
+  .container-proeventos {
+    width: 100%; /* Cambia el ancho al 100% para que se ajuste al ancho del dispositivo */
+  }
+}
+/* Pantallas grandes (768px - infinito) */
+@media (min-width: 768px) {
+  .servicios .servicios-box {
+    width: 100%;
+  }
+  .gif-animation-mobile,
+  .boton-hamburguesa {
+    display: none !important;
+  }
+  nav {
+    flex-direction: column;
+    align-items: center;
+  }
+  nav a {
+    margin: 5px 0;
+  }
+  .container-proeventos {
+    width: 100%; /* Cambia el ancho al 100% para que se ajuste al ancho del dispositivo */
+  }
+}
+/* Agrega una media query para pantallas pequeñas */
+/* Pantallas extra grandes (1200px - infinito) */
+@media (min-width: 1200px) {
+  /* Agrega tus estilos específicos para pantallas extra grandes aquí */
 }
 
 /*# sourceMappingURL=style.css.map */
