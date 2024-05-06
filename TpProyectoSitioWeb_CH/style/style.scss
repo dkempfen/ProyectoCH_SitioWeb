@@ -488,43 +488,7 @@ body {
         position: relative;
     }
     
-    .background-image {
-        position: absolute;
-        top: 0;
-        left: 0;
-        width: 100%;
-        height: 100%;
-        background-image: url('/TpProyectoSitioWeb_CH/imagenes/HappyHour-Promocions-Personas.jpg'); /* Cambia la URL por la de tu imagen */
-        background-size: cover;
-        background-position: center;
-        filter: blur(10px); /* Aplica un filtro de desenfoque */
-        z-index: -1;
-    }
-    .background-image-HappyHour-carrusel {
-        position: absolute;
-        top: 0;
-        left: 0;
-        width: 100%;
-        height: 100%;
-        background-image: url('/TpProyectoSitioWeb_CH/imagenes/HappyHour-carrusel.jpeg'); /* Cambia la URL por la de tu imagen */
-        background-size: cover;
-        background-position: center;
-        filter: blur(10px); /* Aplica un filtro de desenfoque */
-        z-index: -1;
-    }
     
-    .background-image-HappyHour-letra {
-        position: absolute;
-        top: 0;
-        left: 0;
-        width: 100%;
-        height: 100%;
-        background-image: url('/TpProyectoSitioWeb_CH/imagenes/HappyHour-letras.jpeg'); /* Cambia la URL por la de tu imagen */
-        background-size: cover;
-        background-position: center;
-        filter: blur(10px); /* Aplica un filtro de desenfoque */
-        z-index: -1;
-    }
     
     .carousel-item img {
         object-fit: cover;
@@ -729,7 +693,7 @@ footer {
    
 }
 
-#carouselExampleSlidesOnly {
+#carouselSlide {
     max-width: 100%;
     margin: 0 auto; /* Centrar el carrusel en la pantalla */
 }
@@ -827,7 +791,10 @@ footer {
     #navbarListadoMenu {
         top: 120px;
     }
+
+   
 }
+
 
 /* Pantallas medianas (321px - 540px) */
 @media (min-width: 321px) and (max-width: 540px) {
@@ -864,15 +831,14 @@ footer {
     #navbarListadoMenu {
         top: 120px;
     }
- 
+   
 
 }
 
+/* Media queries para diferentes tamaños de pantalla */
 
-/* Pantallas medianas (432px - 540px) */
-@media (min-width: 432px) and (max-width: 540px) {
-  
-
+/* Pantallas medianas y medianas-grandes */
+@media (min-width: 432px) and (max-width: 767px) {
     main {
         margin-top: -200px; /* Ajusta el margen superior para subir la imagen */
     }
@@ -884,54 +850,43 @@ footer {
     .container-proeventos {
         width: 100%; /* Cambia el ancho al 100% para que se ajuste al ancho del dispositivo */
     }
+
+    /* Pantallas medianas-grandes específicamente */
+    @media (min-width: 541px) {
+        .promociones .promociones-box {
+            margin-bottom: 20px;
+        }
+
+        .gif-animation,
+        .gif-animation-mobile {
+            display: none; /* Oculta el contenido en dispositivos móviles */
+        }
+
+        .mobile-cerveza-logo {
+            text-align: center; /* Centra el contenido horizontalmente */
+        }
+
+        .gif-animation-mobile {
+            display: inline-block;
+            margin-top: -200px; /* Ajusta el margen superior */
+        }
+
+        .carousel-inner {
+            max-height: 400px; /* Ajusta la altura máxima de las imágenes */
+        }
+
+        .carousel-item img {
+            max-height: 600px; /* Ajusta la altura máxima de las imágenes */
+            margin-top: -50px; /* Ajusta el margen superior para subir la imagen */
+        }
+
+        main {
+            margin-top: -100px; /* Ajusta el margen superior para subir la imagen */
+        }
+    }
 }
 
-/* Pantallas medianas-grandes (541px - 767px) */
-@media (min-width: 541px) and (max-width: 767px) {
-    .promociones .promociones-box {
-        margin-bottom: 20px;
-    }
-
-    .gif-animation,
-    .gif-animation-mobile {
-        display: none; /* Oculta el contenido en dispositivos móviles */
-    }
-
-    .mobile-cerveza-logo {
-        text-align: center; /* Centra el contenido horizontalmente */
-    }
-
-    .gif-animation-mobile {
-        display: inline-block;
-        margin-top: -200px; /* Ajusta el margen superior */
-    }
-
-    .carousel-inner {
-        max-height: 400px; /* Ajusta la altura máxima de las imágenes */
-    }
-
-    .carousel-item img {
-        max-height: 600px; /* Ajusta la altura máxima de las imágenes */
-        margin-top: -50px; /* Ajusta el margen superior para subir la imagen */
-    }
-
-    main {
-        margin-top: -100px; /* Ajusta el margen superior para subir la imagen */
-    }
-
-    #navbarListadoMenu {
-        top: 70px;
-    }
-
-    .container-proeventos {
-        width: 100%; /* Cambia el ancho al 100% para que se ajuste al ancho del dispositivo */
-    }
-
-    
-}
-
-
-/* Pantallas grandes (768px - infinito) */
+/* Pantallas grandes */
 @media (min-width: 768px) {
     .servicios .servicios-box {
         width: 100%;
@@ -950,9 +905,8 @@ footer {
             margin: 5px 0;
         }
     }
+
     .container-proeventos {
         width: 100%; /* Cambia el ancho al 100% para que se ajuste al ancho del dispositivo */
     }
-
-     
 }
