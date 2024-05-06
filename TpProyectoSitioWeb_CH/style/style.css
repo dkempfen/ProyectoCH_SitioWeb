@@ -668,6 +668,9 @@ footer .margen-superior-inferior {
     max-height: 600px; /* Ajusta la altura máxima de las imágenes */
     margin-top: -50px; /* Ajusta el margen superior para subir la imagen */
   }
+  main {
+    margin-top: -200px; /* Ajusta el margen superior para subir la imagen */
+  }
   .main-home {
     margin-top: -200px; /* Ajusta el margen superior para subir la imagen */
   }
