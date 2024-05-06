@@ -123,6 +123,10 @@ body .nav_menu nav a:hover {
   background-color: #ffdb58;
   color: #1a1a1a;
 }
+body .carousel {
+  height: 800px; /* Establece la altura del carrusel */
+  margin-bottom: 20px; /* Agrega un margen inferior opcional para separar el carrusel de otros elementos */
+}
 body .carousel-inner {
   width: 100%;
   height: 100%;
@@ -768,11 +772,6 @@ footer .margen-superior-inferior {
   .container-proeventos {
     width: 100%; /* Cambia el ancho al 100% para que se ajuste al ancho del dispositivo */
   }
-}
-/* Agrega una media query para pantallas pequeñas */
-/* Pantallas extra grandes (1200px - infinito) */
-@media (min-width: 1200px) {
-  /* Agrega tus estilos específicos para pantallas extra grandes aquí */
 }
 
 /*# sourceMappingURL=style.css.map */
