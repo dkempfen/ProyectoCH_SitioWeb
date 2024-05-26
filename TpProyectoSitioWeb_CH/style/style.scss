@@ -757,6 +757,33 @@ footer {
     margin-right: 5px; /* Espacio entre el icono y el texto */
 }
 
+.game-bohemio {
+    background: #2c3e50; /* Color de fondo oscuro */
+    color: #fff; /* Texto en color blanco */
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    text-align: center;
+}
+.boton-juego {
+    background-color: #e67e22; /* Color naranja */
+    color: #fff; /* Texto en color blanco */
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    font-size: 16px;
+    cursor: pointer;
+    transition: background-color 0.3s ease; /* Transición suave */
+}
+
+.boton-juego:hover {
+    background-color: #d35400; /* Cambio de color al pasar el ratón */
+}
+.message {
+    margin-top: 20px;
+    font-size: 18px;
+}
+
 // Media queries
 
 /* Oculta la barra de navegación en dispositivos con un ancho máximo de 768px */
