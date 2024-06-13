@@ -10,9 +10,9 @@ function agregarAlCarrito(nombre, precio) {
 }
 
 function mostrarCarrito() {
-    const ElementoCarrito = document.getElementById('carrito');
+    const ComprasCarrito = document.getElementById('carrito');
 
-    ElementoCarrito.innerHTML = '<h2>Carrito de Compras</h2>';
+    ComprasCarrito.innerHTML = '<h2>Carrito de Compras</h2>';
 
     if (carrito.length > 0) {
         const listaProductosCarrito = carrito.map((producto) => {
@@ -25,8 +25,8 @@ function mostrarCarrito() {
 
         const totalComprasCarrito = calcularTotalCarrito().toFixed(2);
 
-        ElementoCarrito.innerHTML += `<ul>${listaProductosCarrito}</ul>`;
-        ElementoCarrito.innerHTML += `<p>Total: $${totalComprasCarrito}</p>`;
+        ComprasCarrito.innerHTML += `<ul>${listaProductosCarrito}</ul>`;
+        ComprasCarrito.innerHTML += `<p>Total: $${totalComprasCarrito}</p>`;
     }
 }
 
