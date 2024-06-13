@@ -16,13 +16,58 @@
     <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" />
 
 </head>
-
+<style>/* Estilo básico para el ícono del carrito */
+    .carrito-estilos {
+        position: fixed;
+        top: 10px;
+        right: 10px;
+        background-color: #ffc107;
+        padding: 5px;
+        border-radius: 50%;
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
+    
+    .carrito-icono {
+        font-size: 24px;
+        color: #fff;
+        text-decoration: none;
+    }
+   
+    .btn-agregar {
+        margin-bottom: 10px; 
+        margin-left: 10px;
+        padding: 5px 15px; 
+        background-color: #007bff;
+        color: white;
+        border: none;
+        border-radius: 5px;
+        cursor: pointer;
+        transition: background-color 0.3s, transform 0.3s;
+    }
+    .btn-agregar:hover {
+        background-color: #0056b3;
+        transform: scale(1.05);
+    }
+    .btn-agregar:active {
+        background-color: #004080;
+        transform: scale(1);
+    }
+  
+</style>
 <body>
     <header>
         <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
             <div class="container-fluid">
                 <div class="d-flex justify-content-between align-items-center w-100">
                     <h1 class="title-bar text-center">Rincón Bohemio</h1>
+                     <!-- Ícono del carrito -->
+                    <div class="carrito-estilos">
+                        <a href="/TpProyectoSitioWeb_CH/pages/carrito.html" class="bi bi-cart-fill"></a>
+                        <span id="contador-carrito">0</span> 
+                    </div>
                     <!-- Botón hamburguesa para dispositivos móviles -->
                     <button class="navbar-toggler boton-hamburguesa" type="button" data-bs-toggle="offcanvas" data-bs-target="#navbarListadoMenu"
                         aria-controls="navbarListadoMenu" aria-label="Toggle navigation">
@@ -116,14 +161,18 @@
                                         <div class="d-flex justify-content-between align-items-center">
                                             <p style="margin-bottom: 5px;">Espresso - $2.00</p>
                                             <img src="" alt="" style="max-width: 70px;">
+                                            <button class="btn-agregar" onclick="agregarAlCarrito('Espresso', 2.00)">Agregar</button>
                                         </div>
+
                                         <div class="d-flex justify-content-between align-items-center">
                                             <p style="margin-bottom: 5px;">Americano - $2.50</p>
                                             <img src="" alt="" style="max-width: 70px;">
-                                        </div>
+                                            <button class="btn-agregar" onclick="agregarAlCarrito('Americano', 2.50)">Agregar</button>
+                                        </div>                        
                                         <div class="d-flex justify-content-between align-items-center">
-                                            <p>Café Latte - $3.00</p>
+                                            <p style="margin-bottom: 5px;">Café Latte - $3.00</p>
                                             <img src="" alt="" style="max-width: 70px;">
+                                            <button class="btn-agregar" onclick="agregarAlCarrito('Café Latte', 3.00)">Agregar</button>
                                         </div>
                                     </div>
                                 </div>
@@ -140,14 +189,20 @@
                                         <div class="d-flex justify-content-between align-items-center">
                                             <p style="margin-bottom: 5px;">Capuchino Clásico - $3.50</p>
                                             <img src="" alt="" style="max-width: 70px;">
+                                            <button class="btn-agregar" onclick="agregarAlCarrito('EspresCapuchino Clásicoso', 3.50)">Agregar</button>
+
                                         </div>
                                         <div class="d-flex justify-content-between align-items-center">
                                             <p style="margin-bottom: 5px;">Capuchino Vainilla - $4.00</p>
                                             <img src="" alt="" style="max-width: 70px;">
+                                            <button class="btn-agregar" onclick="agregarAlCarrito('Capuchino Vainilla', 4.00)">Agregar</button>
+
                                         </div>
                                         <div class="d-flex justify-content-between align-items-center">
                                             <p>Capuchino Caramelo - $4.50</p>
                                             <img src="" alt="" style="max-width: 70px;">
+                                            <button class="btn-agregar" onclick="agregarAlCarrito('Capuchino Caramelo', 4.50)">Agregar</button>
+
                                         </div>
                                     </div>
                                 </div>
@@ -166,14 +221,20 @@
                                         <div class="d-flex justify-content-between align-items-center">
                                             <p style="margin-bottom: 5px;">Té Negro - $2.00</p>
                                             <img src="" alt="" style="max-width: 70px;">
+                                            <button class="btn-agregar" onclick="agregarAlCarrito('Té Negro', 2.00)">Agregar</button>
+
                                         </div>
                                         <div class="d-flex justify-content-between align-items-center">
                                             <p style="margin-bottom: 5px;">Té Verde - $2.50</p>
                                             <img src="" alt="" style="max-width: 70px;">
+                                            <button class="btn-agregar" onclick="agregarAlCarrito('Té Verde', 2.50)">Agregar</button>
+
                                         </div>
                                         <div class="d-flex justify-content-between align-items-center">
                                             <p>Té de Hierbas - $2.25</p>
                                             <img src="" alt="" style="max-width: 70px;">
+                                            <button class="btn-agregar" onclick="agregarAlCarrito('Té de Hierbas', 2.25)">Agregar</button>
+
                                         </div>
                                     </div>
                                 </div>
@@ -189,14 +250,20 @@
                                         <div class="d-flex justify-content-between align-items-center">
                                             <p style="margin-bottom: 5px;">Medialuna Simple - $1.50</p>
                                             <img src="" alt="" style="max-width: 70px;">
+                                            <button class="btn-agregar" onclick="agregarAlCarrito('Medialuna Simple', 1.50)">Agregar</button>
+
                                         </div>
                                         <div class="d-flex justify-content-between align-items-center">
                                             <p style="margin-bottom: 5px;">Medialuna con Chocolate - $2.00</p>
                                             <img src="" alt="" style="max-width: 70px;">
+                                            <button class="btn-agregar" onclick="agregarAlCarrito('Medialuna con Chocolate', 2.00)">Agregar</button>
+
                                         </div>
                                         <div class="d-flex justify-content-between align-items-center">
                                             <p>Medialuna de Almendras - $2.50</p>
                                             <img src="" alt="" style="max-width: 70px;">
+                                            <button class="btn-agregar" onclick="agregarAlCarrito('Medialuna de Almendras', 2.50)">Agregar</button>
+
                                         </div>
                                     </div>
                                 </div>
@@ -216,14 +283,20 @@
                                         <div class="d-flex justify-content-between align-items-center">
                                             <p style="margin-bottom: 5px;">Torta de Chocolate - $4.00 por porción</p>
                                             <img src="" alt="" style="max-width: 70px;">
+                                            <button class="btn-agregar" onclick="agregarAlCarrito('Torta de Chocolate', 4.00)">Agregar</button>
+
                                         </div>
                                         <div class="d-flex justify-content-between align-items-center">
                                             <p style="margin-bottom: 5px;">Torta de Frutas - $3.50 por porción</p>
                                             <img src="" alt="" style="max-width: 70px;">
+                                            <button class="btn-agregar" onclick="agregarAlCarrito('Torta de Frutas', 3.50)">Agregar</button>
+
                                         </div>
                                         <div class="d-flex justify-content-between align-items-center">
                                             <p>Torta de Zanahoria - $3.75 por porción</p>
                                             <img src="" alt="" style="max-width: 70px;">
+                                            <button class="btn-agregar" onclick="agregarAlCarrito('Torta de Zanahoria', 2.00)">Agregar</button>
+
                                         </div>
                                     </div>
                                 </div>
@@ -240,14 +313,19 @@
                                         <div class="d-flex justify-content-between align-items-center">
                                             <p style="margin-bottom: 5px;">Licuado de Frutas Tropicales - $4.50</p>
                                             <img src="" alt="" style="max-width: 70px;">
+                                            <button class="btn-agregar" onclick="agregarAlCarrito('Licuado de Frutas Tropicales', 4.50)">Agregar</button>
+
                                         </div>
                                         <div class="d-flex justify-content-between align-items-center">
                                             <p style="margin-bottom: 5px;">Licuado de Fresa y Plátano - $3.75</p>
                                             <img src="" alt="" style="max-width: 70px;">
+                                            <button class="btn-agregar" onclick="agregarAlCarrito('Licuado de Fresa y Plátano', 3.75)">Agregar</button>
+
                                         </div>
                                         <div class="d-flex justify-content-between align-items-center">
                                             <p>Licuado de Espinacas y Mango - $5.25</p>
                                             <img src="" alt="" style="max-width: 70px;">
+                                            <button class="btn-agregar" onclick="agregarAlCarrito('Licuado de Espinacas y Mango', 5.25)">Agregar</button>
                                         </div>
                                     </div>
                                 </div>
@@ -288,6 +366,8 @@
         </a>
     </footer>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="/TpProyectoSitioWeb_CH/js/funciones.js"></script>
+
 </body>
 
 </html>
