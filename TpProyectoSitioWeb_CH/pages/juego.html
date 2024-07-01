@@ -112,7 +112,7 @@
                         <div class="game-bohemio">
                         <h1>Juego de Adivinanza</h1>
                         <p id="instructiones">Adivina un número entre 1 y 10</p>
-                        <button class="boton-juego" onclick="ComiezaJuego()">Empezar Juego</button>
+                        <button class="boton-juego" onclick="ComienzaJuego()">Empezar Juego</button>
                         <div class="message" id="message"></div>
                     </div>
                 </div>
@@ -121,37 +121,6 @@
        
      </main>
 
-    <script>
-        function ComiezaJuego() {
-            let NumeroAzar = Math.floor(Math.random() * 10) + 1;
-            let intentos = 3;
-            let messageJuego = document.getElementById('message');
-
-            while (intentos > 0) {
-                let clienteUser = parseInt(prompt(`Tienes ${intentos} intentos. Ingresa un número entre 1 y 10:`));
-                console.log(`Número ingresado por el cliente es: ${clienteUser}`); 
-                if (isNaN(clienteUser) || clienteUser < 1 || clienteUser > 10) {
-                    alert('Por favor, ingresa un número válido entre 1 y 10.');
-                    continue;
-                
-                }           
-                if (clienteUser === NumeroAzar) {
-                    messageJuego.innerText = `¡Felicidades! Has ganado, el número ${NumeroAzar} fue correcto. Acerquese a la caja, y retira la cerveza, papas y hamburguesa!`;
-                    console.log(`El número ingresado es incorrecto. ¡Ten cuidado, te quedan ${intentos} intentos!.`);
-                    return;
-                 
-                } else {
-                    intentos--; // es la froma abrevieda de intentos = intentos - 1;
-                    if (intentos > 0) {
-                        alert(`El número ingresado es incorrecto. ¡Ten cuidado, te quedan ${intentos} intentos!.`);
-                        console.log(`El número ingresado es incorrecto. ¡Ten cuidado, te quedan ${intentos} intentos!.`);                        
-                    }
-                }
-            }
-            messageJuego.innerText = `Lo siento, has perdido. El número era ${NumeroAzar}. Intenta de nuevo.`;
-            console.log(`Lo siento, has perdido. El número era ${NumeroAzar}. Intenta de nuevo.`);
-        }
-    </script>
     <footer class="footer-promociones">
          
         
@@ -179,7 +148,9 @@
         </a>
       
     </footer>
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/animejs/3.2.1/anime.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"></script>
-</body>
+    <script src="../js/funciones.js"></script></body>
 
 </html>
