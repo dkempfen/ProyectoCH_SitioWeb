@@ -1,0 +1,183 @@
+{
+    "bebidas": [
+      {
+        "categoria": "Cervezas",
+        "items": [
+          {"nombre": "Amstel Light", "precio": 3.50, "imagen": "ruta/a/imagen/amstel_light.jpg"},
+          {"nombre": "Heineken", "precio": 4.00, "imagen": "ruta/a/imagen/heineken.jpg"},
+          {"nombre": "Corona Extra", "precio": 3.75, "imagen": "ruta/a/imagen/corona_extra.jpg"}
+        ]
+      },
+      {
+        "categoria": "Vino",
+        "items": [
+          {"nombre": "Merlot", "precio": 6.50, "imagen": "ruta/a/imagen/merlot.jpg"},
+          {"nombre": "Chardonnay", "precio": 5.75, "imagen": "ruta/a/imagen/chardonnay.jpg"},
+          {"nombre": "Cabernet Sauvignon", "precio": 7.00, "imagen": "ruta/a/imagen/cabernet_sauvignon.jpg"}
+        ]
+      },
+      {
+        "categoria": "Agua",
+        "items": [
+          {"nombre": "Agua Mineral", "precio": 1.50, "imagen": "ruta/a/imagen/agua_mineral.jpg"},
+          {"nombre": "Agua con gas", "precio": 2.00, "imagen": "ruta/a/imagen/agua_con_gas.jpg"},
+          {"nombre": "Agua saborizada", "precio": 2.25, "imagen": "ruta/a/imagen/agua_saborizada.jpg"}
+        ]
+      },
+      {
+        "categoria": "Gaseosas",
+        "items": [
+          {"nombre": "Coca-Cola", "precio": 1.75, "imagen": "ruta/a/imagen/coca_cola.jpg"},
+          {"nombre": "Pepsi", "precio": 1.50, "imagen": "ruta/a/imagen/pepsi.jpg"},
+          {"nombre": "Sprite", "precio": 1.50, "imagen": "ruta/a/imagen/sprite.jpg"}
+        ]
+      },
+      {
+        "categoria": "Bebidas Alcohólicas",
+        "items": [
+          {"nombre": "Mojito", "precio": 8.50, "imagen": "ruta/a/imagen/mojito.jpg"},
+          {"nombre": "Margarita", "precio": 7.75, "imagen": "ruta/a/imagen/margarita.jpg"},
+          {"nombre": "Piña Colada", "precio": 9.00, "imagen": "ruta/a/imagen/pina_colada.jpg"}
+        ]
+      },
+      {
+        "categoria": "Jugos",
+        "items": [
+          {"nombre": "Jugo de Naranja", "precio": 2.50, "imagen": "ruta/a/imagen/jugo_naranja.jpg"},
+          {"nombre": "Jugo de Manzana", "precio": 2.25, "imagen": "ruta/a/imagen/jugo_manzana.jpg"},
+          {"nombre": "Jugo de Piña", "precio": 2.75, "imagen": "ruta/a/imagen/jugo_pina.jpg"}
+        ]
+      }
+    ],
+
+    "pizzas": [
+      {
+        "categoria": "Pizzas de Queso",
+        "items": [
+          {"nombre": "Pizza de Mozzarella", "precio": 8.00, "imagen": "ruta/a/imagen/mozzarella.jpg"},
+          {"nombre": "Pizza de Queso Azul", "precio": 9.50, "imagen": "ruta/a/imagen/queso_azul.jpg"},
+          {"nombre": "Pizza de Cheddar", "precio": 8.50, "imagen": "ruta/a/imagen/cheddar.jpg"}
+        ]
+      },
+      {
+        "categoria": "Pizzas Especiales",
+        "items": [
+          {"nombre": "Pizza de Pepperoni", "precio": 10.00, "imagen": "ruta/a/imagen/pepperoni.jpg"},
+          {"nombre": "Pizza de Pollo BBQ", "precio": 11.50, "imagen": "ruta/a/imagen/pollo_bbq.jpg"},
+          {"nombre": "Pizza de Champiñones", "precio": 9.50, "imagen": "ruta/a/imagen/champinones.jpg"}
+        ]
+      }
+    ],
+    "cafes": [
+        {
+        "categoria": "Cafés",
+        "items": [
+        {"nombre": "Espresso", "precio": 2.00, "imagen": "ruta/a/imagen/espresso.jpg"},
+        {"nombre": "Americano","precio": 2.50,"imagen": "ruta/a/imagen/americano.jpg"},
+        {"nombre": "Café Latte","precio": 3.00,"imagen": "ruta/a/imagen/cafe_latte.jpg"}
+        ]
+    },
+    {
+        "categoria": "Capuchinos",
+        "items": [
+        {
+            "nombre": "Capuchino Clásico",
+            "precio": 3.50,
+            "imagen": "ruta/a/imagen/capuchino_clasico.jpg"
+        },
+        {
+            "nombre": "Capuchino Vainilla",
+            "precio": 4.00,
+            "imagen": "ruta/a/imagen/capuchino_vainilla.jpg"
+        },
+        {
+            "nombre": "Capuchino Caramelo",
+            "precio": 4.50,
+            "imagen": "ruta/a/imagen/capuchino_caramelo.jpg"
+        }
+        ]
+    },
+     {
+    "categoria": "Té",
+    "items": [
+      {
+        "nombre": "Té Negro",
+        "precio": 2.00,
+        "imagen": "ruta/a/imagen/te_negro.jpg"
+      },
+      {
+        "nombre": "Té Verde",
+        "precio": 2.50,
+        "imagen": "ruta/a/imagen/te_verde.jpg"
+      },
+      {
+        "nombre": "Té de Hierbas",
+        "precio": 2.25,
+        "imagen": "ruta/a/imagen/te_de_hierbas.jpg"
+      }
+    ]
+   },
+   {
+    "categoria": "Medialunas",
+    "items": [
+      {
+        "nombre": "Medialuna Simple",
+        "precio": 1.50,
+        "imagen": "ruta/a/imagen/medialuna_simple.jpg"
+      },
+      {
+        "nombre": "Medialuna con Chocolate",
+        "precio": 2.00,
+        "imagen": "ruta/a/imagen/medialuna_chocolate.jpg"
+      },
+      {
+        "nombre": "Medialuna de Almendras",
+        "precio": 2.50,
+        "imagen": "ruta/a/imagen/medialuna_almendras.jpg"
+      }
+    ]
+   },
+   {
+    "categoria": "Tortas",
+    "items": [
+      {
+        "nombre": "Torta de Chocolate",
+        "precio": 4.00,
+        "imagen": "ruta/a/imagen/torta_chocolate.jpg"
+      },
+      {
+        "nombre": "Torta de Frutas",
+        "precio": 3.50,
+        "imagen": "ruta/a/imagen/torta_fruitas.jpg"
+      },
+      {
+        "nombre": "Torta de Zanahoria",
+        "precio": 3.75,
+        "imagen": "ruta/a/imagen/torta_zanahoria.jpg"
+      }
+    ]
+    },
+    {
+    "categoria": "Licuados",
+    "items": [
+      {
+        "nombre": "Licuado de Frutas Tropicales",
+        "precio": 4.50,
+        "imagen": "ruta/a/imagen/licuado_frutas_tropicales.jpg"
+      },
+      {
+        "nombre": "Licuado de Fresa y Plátano",
+        "precio": 3.75,
+        "imagen": "ruta/a/imagen/licuado_fresa_platano.jpg"
+      },
+      {
+        "nombre": "Licuado de Espinacas y Mango",
+        "precio": 5.25,
+        "imagen": "ruta/a/imagen/licuado_espinacas_mango.jpg"
+      }
+    ]
+  }
+    ]
+}
+  
+  

@@ -6,26 +6,231 @@ function actualizarCarrito() {
     carritoContador.innerText = carrito.length;
     mostrarCarrito();
 }
+function cargarMenu() {
+    const container = document.getElementById('menu-container');
+    const containerPizza = document.getElementById('menu-container-pizza');
+
+    
+    const xhr = new XMLHttpRequest();
+    xhr.open('GET', '../js/carrito.json', true);
+    xhr.onload = function () {
+      if (xhr.status === 200) {
+        const menuJSON = JSON.parse(xhr.responseText);
+        
+        for (let i = 0; i < menuJSON.bebidas.length; i += 2) {
+          const CATEGORIABEBIDAS1 = menuJSON.bebidas[i];
+          const CATEGORIABEBIDAS2 = menuJSON.bebidas[i + 1];
+        
+          
+          const categoriaHTML = `
+            <div class="row">
+              <div class="col-lg-6">
+                <ul class="cerveza-list">
+                  <li class="cerveza-item">
+                    <h3>${CATEGORIABEBIDAS1.categoria}</h3>
+                    <div class="d-flex align-items-center">
+                      <div>
+                        ${CATEGORIABEBIDAS1.items.map(item => `
+                          <div class="d-flex justify-content-between align-items-center">
+                            <p style="margin-bottom: 5px;">${item.nombre} - $${item.precio.toFixed(2)}</p>
+                            <button class="btn-agregar" onclick="agregarAlCarrito('${item.nombre}', ${item.precio})">Agregar</button>
+                          </div>
+                        `).join('')}
+                      </div>
+                    </div>
+                  </li>
+                </ul>
+              </div>
+              
+              ${CATEGORIABEBIDAS2 ? `
+                <div class="col-lg-6">
+                  <ul class="cerveza-list">
+                    <li class="cerveza-item">
+                      <h3>${CATEGORIABEBIDAS2.categoria}</h3>
+                      <div class="d-flex align-items-center">
+                        <div>
+                          ${CATEGORIABEBIDAS2.items.map(item => `
+                            <div class="d-flex justify-content-between align-items-center">
+                              <p style="margin-bottom: 5px;">${item.nombre} - $${item.precio.toFixed(2)}</p>
+                              <button class="btn-agregar" onclick="agregarAlCarrito('${item.nombre}', ${item.precio})">Agregar</button>
+                            </div>
+                          `).join('')}
+                        </div>
+                      </div>
+                    </li>
+                  </ul>
+                </div>
+              ` : ''}
+            </div>
+
+            
+          `;
+          
+          container.innerHTML += categoriaHTML;
+        }
+      } else {
+        console.error('Error al cargar el archivo JSON');
+      }
+    };
+    xhr.send();
+}
+function cargarMenuPizza() {
+    const containerPizza = document.getElementById('menu-container-pizza');
+
+    
+    const xhr = new XMLHttpRequest();
+    xhr.open('GET', '../js/carrito.json', true);
+    xhr.onload = function () {
+      if (xhr.status === 200) {
+        const menuJSON = JSON.parse(xhr.responseText);
+        
+        for (let i = 0; i < menuJSON.pizzas.length; i += 2) {
+          const CATEGORIAPIZZA1 = menuJSON.pizzas[i];
+          const CATEGORIAPIZZA2 = menuJSON.pizzas[i + 1];
+        
+          
+          const categoriaPizzaHTML = `
+            <div class="row">
+              <div class="col-lg-6">
+                <ul class="cerveza-list">
+                  <li class="cerveza-item">
+                    <h3>${CATEGORIAPIZZA1.categoria}</h3>
+                    <div class="d-flex align-items-center">
+                      <div>
+                        ${CATEGORIAPIZZA1.items.map(item => `
+                          <div class="d-flex justify-content-between align-items-center">
+                            <p style="margin-bottom: 5px;">${item.nombre} - $${item.precio.toFixed(2)}</p>
+                            <button class="btn-agregar" onclick="agregarAlCarrito('${item.nombre}', ${item.precio})">Agregar</button>
+                          </div>
+                        `).join('')}
+                      </div>
+                    </div>
+                  </li>
+                </ul>
+              </div>
+              
+              ${CATEGORIAPIZZA2 ? `
+                <div class="col-lg-6">
+                  <ul class="cerveza-list">
+                    <li class="cerveza-item">
+                      <h3>${CATEGORIAPIZZA2.categoria}</h3>
+                      <div class="d-flex align-items-center">
+                        <div>
+                          ${CATEGORIAPIZZA2.items.map(item => `
+                            <div class="d-flex justify-content-between align-items-center">
+                              <p style="margin-bottom: 5px;">${item.nombre} - $${item.precio.toFixed(2)}</p>
+                              <button class="btn-agregar" onclick="agregarAlCarrito('${item.nombre}', ${item.precio})">Agregar</button>
+                            </div>
+                          `).join('')}
+                        </div>
+                      </div>
+                    </li>
+                  </ul>
+                </div>
+              ` : ''}
+            </div>
+
+            
+          `;
+          
+          containerPizza.innerHTML += categoriaPizzaHTML;
+        }
+      } else {
+        console.error('Error al cargar el archivo JSON');
+      }
+    };
+    xhr.send();
+}
+
+
+function cargarMenuCafe() {
+    const containerCafe = document.getElementById('menu-container-cafe');
+
+    
+    const xhr = new XMLHttpRequest();
+    xhr.open('GET', '../js/carrito.json', true);
+    xhr.onload = function () {
+      if (xhr.status === 200) {
+        const menuJSON = JSON.parse(xhr.responseText);
+        
+        for (let i = 0; i < menuJSON.cafes.length; i += 2) {
+          const CATEGORIACAFE1 = menuJSON.cafes[i];
+          const CATEGORIACAFE2 = menuJSON.cafes[i + 1];
+        
+          
+          const categoriaCafeHTML = `
+            <div class="row">
+              <div class="col-lg-6">
+                <ul class="cerveza-list">
+                  <li class="cerveza-item">
+                    <h3>${CATEGORIACAFE1.categoria}</h3>
+                    <div class="d-flex align-items-center">
+                      <div>
+                        ${CATEGORIACAFE1.items.map(item => `
+                          <div class="d-flex justify-content-between align-items-center">
+                            <p style="margin-bottom: 5px;">${item.nombre} - $${item.precio.toFixed(2)}</p>
+                            <button class="btn-agregar" onclick="agregarAlCarrito('${item.nombre}', ${item.precio})">Agregar</button>
+                          </div>
+                        `).join('')}
+                      </div>
+                    </div>
+                  </li>
+                </ul>
+              </div>
+              
+              ${CATEGORIACAFE2 ? `
+                <div class="col-lg-6">
+                  <ul class="cerveza-list">
+                    <li class="cerveza-item">
+                      <h3>${CATEGORIACAFE2.categoria}</h3>
+                      <div class="d-flex align-items-center">
+                        <div>
+                          ${CATEGORIACAFE2.items.map(item => `
+                            <div class="d-flex justify-content-between align-items-center">
+                              <p style="margin-bottom: 5px;">${item.nombre} - $${item.precio.toFixed(2)}</p>
+                              <button class="btn-agregar" onclick="agregarAlCarrito('${item.nombre}', ${item.precio})">Agregar</button>
+                            </div>
+                          `).join('')}
+                        </div>
+                      </div>
+                    </li>
+                  </ul>
+                </div>
+              ` : ''}
+            </div>
+
+            
+          `;
+          
+          containerCafe.innerHTML += categoriaCafeHTML;
+        }
+      } else {
+        console.error('Error al cargar el archivo JSON');
+      }
+    };
+    xhr.send();
+}
 
 function agregarAlCarrito(nombre, precio) {
     let carritoContador = document.getElementById('contador-carrito');
     carritoContador.innerText = parseInt(carritoContador.innerText) + 1;
+  
     const producto = { nombre, precio };
     carrito.push(producto);
     localStorage.setItem('carrito', JSON.stringify(carrito));
-
-
+  
     Swal.fire({
-        icon: 'success',
-        title: 'Producto Agregado',
-        text: `${nombre} se ha agregado al carrito con éxito.`,
-        showConfirmButton: false,
-        timer: 1500,
-       
+      icon: 'success',
+      title: 'Producto Agregado',
+      text: `${nombre} se ha agregado al carrito con éxito.`,
+      showConfirmButton: false,
+      timer: 1500
     });
-
-   
 }
+  
+cargarMenu();
+cargarMenuPizza();
+cargarMenuCafe();
 
 function mostrarCarrito() {
     const ComprasCarrito = document.getElementById('carrito');
@@ -183,33 +388,49 @@ document.addEventListener('DOMContentLoaded', (event) => {
 mostrarCarrito();
 
 ///funcion de juego
-function ComienzaJuego() {
+async function ComienzaJuego() {
     let NumeroAzar = Math.floor(Math.random() * 10) + 1;
     let intentos = 3;
     let messageJuego = document.getElementById('message');
 
     while (intentos > 0) {
-        let clienteUser = parseInt(prompt(`Tienes ${intentos} intentos. Ingresa un número entre 1 y 10:`));
-        console.log(`Número ingresado por el cliente es: ${clienteUser}`); 
-        if (isNaN(clienteUser) || clienteUser < 1 || clienteUser > 10) {
-            alert('Por favor, ingresa un número válido entre 1 y 10.');
-            continue;
-        
-        }           
-        if (clienteUser === NumeroAzar) {
-            messageJuego.innerText = `¡Felicidades! Has ganado, el número ${NumeroAzar} fue correcto. Acerquese a la caja, y retira la cerveza, papas y hamburguesa!`;
-            console.log(`El número ingresado es incorrecto. ¡Ten cuidado, te quedan ${intentos} intentos!.`);
+        const { value: clienteUser } = await Swal.fire({
+            title: `Tienes ${intentos} intentos`,
+            input: 'number',
+            inputLabel: 'Ingresa un número entre 1 y 10:',
+            inputPlaceholder: 'Número',
+            inputValidator: (value) => {
+                if (!value || value < 1 || value > 10) {
+                    return 'Por favor, ingresa un número válido entre 1 y 10.';
+                }
+            },
+            showCancelButton: true,
+            cancelButtonText: 'Cancelar'
+        });
+
+   
+
+        if (clienteUser == NumeroAzar) {
+            messageJuego.innerText = `¡Felicidades! Has ganado, el número ${NumeroAzar} fue correcto. Acércate a la caja y retira la cerveza, papas y hamburguesa!`;
+            console.log(`Número ingresado correcto: ${clienteUser}`);
             return;
-         
+
         } else {
-            intentos--; // es la froma abrevieda de intentos = intentos - 1;
+            intentos--;
             if (intentos > 0) {
-                alert(`El número ingresado es incorrecto. ¡Ten cuidado, te quedan ${intentos} intentos!.`);
-                console.log(`El número ingresado es incorrecto. ¡Ten cuidado, te quedan ${intentos} intentos!.`);                        
+                Swal.fire(`El número ingresado es incorrecto. ¡Ten cuidado, te quedan ${intentos} intentos!`);
+                console.log(`Número ingresado incorrecto: ${clienteUser}. Quedan ${intentos} intentos.`);
             }
         }
+        
     }
-    messageJuego.innerText = `Lo siento, has perdido. El número era ${NumeroAzar}. Intenta de nuevo.`;
-    console.log(`Lo siento, has perdido. El número era ${NumeroAzar}. Intenta de nuevo.`);
-}
 
+    messageJuego.innerText = `Lo siento, has perdido. El número era ${NumeroAzar}. Intenta de nuevo.`;
+    Swal.fire({
+        title: 'Lo siento, has perdido',
+        text: `El número era ${NumeroAzar}. Intenta de nuevo.`,
+        icon: 'error'
+    });
+    console.log(`Perdió. El número era ${NumeroAzar}.`);
+
+}
